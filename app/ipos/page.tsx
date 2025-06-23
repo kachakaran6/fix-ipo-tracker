@@ -58,8 +58,9 @@ export default function IPOsPage() {
     }).format(amount);
   };
 
-  const uniqueIPOs = [...new Set(applications.map((app) => app.ipoName))]
-    .length;
+  const uniqueIPOs = Array.from(
+    new Set(applications.map((app) => app.ipoName))
+  ).length;
 
   if (!isLoaded) {
     return (
@@ -80,7 +81,7 @@ export default function IPOsPage() {
             Fixed IPO Application Tracker
           </h1>
           <p className="text-muted-foreground text-lg">
-            Manage and track your Fixed IPO applications
+            Manage and track your Fixed applications
           </p>
         </div>
 
