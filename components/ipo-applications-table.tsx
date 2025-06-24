@@ -16,9 +16,11 @@ import {
   Calendar,
   CreditCard,
   Hash,
+  PersonStanding,
   ArrowUpDown,
   ChevronUp,
   ChevronDown,
+  User,
 } from "lucide-react";
 import { IPOApplication } from "@/lib/types";
 import { storageUtils } from "@/lib/storage";
@@ -168,7 +170,7 @@ export function IPOApplicationsTable({
               <TableHead className="w-[120px] text-right">
                 Fixed Price
               </TableHead>
-              <TableHead className="w-[100px] text-right">Total</TableHead>
+              {/* <TableHead className="w-[100px] text-right">Total</TableHead> */}
               <TableHead className="w-[140px]">
                 <SortButton field="timestamp">Applied Date</SortButton>
               </TableHead>
@@ -181,7 +183,7 @@ export function IPOApplicationsTable({
               <TableRow key={application.id} className="group">
                 <TableCell className="font-mono text-sm">
                   <div className="flex items-center gap-2">
-                    <Hash className="h-3 w-3 text-muted-foreground" />
+                    <User className="h-3 w-3 text-muted-foreground" />
                     {application.applicantName}
                   </div>
                 </TableCell>
@@ -205,11 +207,11 @@ export function IPOApplicationsTable({
                     ? formatPrice(application.otherPrice)
                     : "—"}
                 </TableCell>
-                <TableCell className="text-right font-semibold">
+                {/* <TableCell className="text-right font-semibold">
                   {formatPrice(
                     application.ipoPrice + (application.otherPrice || 0)
                   )}
-                </TableCell>
+                </TableCell> */}
                 <TableCell className="text-sm text-muted-foreground">
                   <div className="flex items-center gap-1">
                     <Calendar className="h-3 w-3" />
@@ -218,7 +220,7 @@ export function IPOApplicationsTable({
                 </TableCell>
                 <TableCell>
                   <Badge variant="secondary" className="text-xs">
-                    Applied
+                    Booked
                   </Badge>
                 </TableCell>
                 <TableCell>
